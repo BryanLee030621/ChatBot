@@ -2,7 +2,7 @@ from transformers import BertTokenizer, BertForSequenceClassification, pipeline
 
 # Load tokenizer and intent classification model
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-model = BertForSequenceClassification.from_pretrained("path_to_your_fine_tuned_bert")
+model = BertForSequenceClassification.from_pretrained("bert-base-uncased")
 
 # Intent detection
 def analyze_intent(query):
