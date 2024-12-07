@@ -2,7 +2,6 @@ import time
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS 
 from bert_integration import analyze_intent, extract_entities
-from gpt_integration import generate_response
 from text_extraction import extract_text
 import os
 
@@ -46,7 +45,11 @@ def chat():
 
     # Step 2: Use GPT for NLG
     response_start = time.time()
-    response = generate_response(document_content, intent, entities)
+    response = {
+        "intent": intent,
+        "entities": entities,
+        "message": f"Processed intent: {intent}, and entities: {entities}."
+    }
     response_end = time.time()
     print(f"Response generation took: {response_end - response_start} seconds")
 
