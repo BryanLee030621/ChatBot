@@ -1,5 +1,4 @@
 flask
 transformers
-openai
 PyPDF2
 python-docx
